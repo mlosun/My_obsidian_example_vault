@@ -1,0 +1,11 @@
+{
+  "accentColor": "",
+  "enabledCssSnippets": [
+    "彩虹文件夹-标题",
+    "标题加颜色",
+    "老版callouts",
+    "隐藏滑动滚轮",
+    "checkbox"
+  ],
+  "theme": "obsidian"
+}

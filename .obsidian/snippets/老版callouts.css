@@ -1,0 +1,25 @@
+.callout {
+
+  border-left-width: 5px;
+
+  padding: unset;
+
+  border-left-color: rgba(var(--callout-color), 1);
+
+}
+
+.callout-title {
+
+  padding: 0.5em 1em;
+
+  background-color: rgba(var(--callout-color), 0.1);
+
+  color: rgba(var(--callout-color), 0.8);
+
+}
+
+.callout-content {
+
+  padding: 0.2em 1em;
+
+}

@@ -1,0 +1,103 @@
+/* 把颜色用变量记下来，便于以后更改 */
+:root {
+    --Red-color: rgb(255, 0, 0);
+    --Orange-color: rgb(255, 108, 13);
+    --LightBlue-color: rgb(0, 176, 240);
+    --DarkBlue-color: rgb(0, 112, 192);
+}
+
+
+/*修改标题颜色和字体，字体为微软雅黑加粗*/
+.markdown-preview-view h1,
+.HyperMD-header-1 .cm-header-1,
+.cm-s-obsidian .cm-header-1 {
+    font-family: "Microsoft YaHei", sans-serif;
+    font-weight: bold;
+    color: var(--Red-color);
+    /*text-align: center;  还是不居中显示了，靠左更好看*/
+}
+
+.markdown-preview-view h2,
+.HyperMD-header-2 .cm-header-2,
+.cm-s-obsidian .cm-header-2 {
+    font-family: "Microsoft YaHei", sans-serif;
+    font-weight: bold;
+    color: var(--Orange-color);
+}
+
+.markdown-preview-view h3,
+.HyperMD-header-3 .cm-header-3,
+.cm-s-obsidian .cm-header-3 {
+    font-family: "Microsoft YaHei", sans-serif;
+    font-weight: bold;
+    color: var(--LightBlue-color);
+}
+
+.markdown-preview-view h4,
+.HyperMD-header-4 .cm-header-4,
+.cm-s-obsidian .cm-header-4 {
+    font-family: "Microsoft YaHei", sans-serif;
+    font-weight: bold;
+    color: var(--DarkBlue-color);
+}
+
+.markdown-preview-view h5,
+.HyperMD-header-5 .cm-header-5,
+.cm-s-obsidian .cm-header-5,
+.markdown-preview-view h6,
+.HyperMD-header-6 .cm-header-6,
+.cm-s-obsidian .cm-header-6 {
+    font-family: "Microsoft YaHei", sans-serif;
+    font-weight: bold;
+    color: var(--DarkBlue-color);
+}
+
+
+/* 设置一级标题(居中)，添加分割线*/
+.markdown-preview-view h1::after,
+.HyperMD-header-1 .cm-header-1::after,
+.cm-s-obsidian .cm-header-1::after {
+    content: "";
+    display: block;
+    height: 1.5px;
+    background-color: rgb(200,200,200);
+    margin-top: 8px; /* 调整分割线与标题之间的间距 */
+}
+
+
+/* 将加粗字体样式更改为蓝色 */
+.markdown-preview-view strong,
+div.cm-line span.cm-strong {
+    color: var(--DarkBlue-color);
+}
+/* 将```中的加粗字体样式更改为蓝色 */
+div p strong {
+    color: var(--DarkBlue-color);
+}
+
+
+/* 修改用==语法高亮的文本 */
+.markdown-preview-view mark,
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight,
+div p mark 
+{
+    font-weight: bold;
+    background-color:yellow;
+    color: var(--DarkBlue-color); /* 设置荧光字体的颜色 */
+}
+
+
+/* 修改公式字体颜色 */
+mjx-math {
+    color: var(--DarkBlue-color);
+}
+
+
+/* 将有序列表编号改为蓝色，加粗*/
+ol > li::marker,
+.cm-s-obsidian .cm-formatting-list-ol,
+span.cm-formatting.cm-formatting-list.cm-formatting-list-ol {
+    color: var(--LightBlue-color);
+    font-weight: bold;
+}

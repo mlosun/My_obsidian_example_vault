@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"517113ecaada52a0","x":-368,"y":-440,"width":1868,"height":360,"color":"1","type":"file","file":"3-资源/Obsidian 管理页面/首页模块.md","subpath":"#最近的 Fleeting Notes"},
+		{"id":"777b1dfb5e643824","x":-368,"y":-40,"width":788,"height":400,"color":"2","type":"file","file":"3-资源/Obsidian 管理页面/首页模块.md","subpath":"#最近创建的笔记"},
+		{"id":"221cd8bea75d6420","x":-368,"y":391,"width":788,"height":440,"color":"4","type":"file","file":"3-资源/Obsidian 管理页面/首页模块.md","subpath":"#最近完成的任务"},
+		{"id":"a78b9a431ca4aaa1","x":460,"y":-40,"width":1040,"height":400,"color":"3","type":"file","file":"3-资源/Obsidian 管理页面/首页模块.md","subpath":"#项目"},
+		{"id":"a3d09f0d18d37ae3","x":980,"y":391,"width":520,"height":440,"color":"6","type":"file","file":"3-资源/Obsidian 管理页面/首页模块.md","subpath":"#资源"},
+		{"id":"66de47bbbbeaa30e","x":460,"y":391,"width":520,"height":440,"color":"5","type":"file","file":"3-资源/Obsidian 管理页面/首页模块.md","subpath":"#领域"}
+	],
+	"edges":[]
+}

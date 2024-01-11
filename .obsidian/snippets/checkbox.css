@@ -1,0 +1,179 @@
+/*
+Obsidian styled checkboxes snippet (Oliver's version)
+See https://github.com/deathau/obsidian-snippets#checkboxes for a demo.
+This supports live preview editor mode and reading mode.
+Tweaks: search this file for "tweak" to find places for common customizations.
+Based on:
+* https://github.com/deathau/obsidian-snippets/blob/main/checkbox.css (works with reading mode only)
+* https://forum.obsidian.md/t/5-checkbox/35758 (works with live preview editor only)
+This snippet combines both of the above snippets and irons out some inconsistencies.
+来源:https://gist.github.com/OliverBalfour/b87459fd55cf1f5832a2e0996a6f45a0
+*/
+
+/* Hide a weird tick overlay */
+input[type=checkbox]:checked::after {
+  display: none !important;
+}
+/* Hide undesirable borders */
+.HyperMD-list-line input[type="checkbox"]:checked {
+  border: none !important;
+}
+
+/* Default checkbox styling */
+.HyperMD-list-line input[type="checkbox"],
+.markdown-preview-view input[type="checkbox"] {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  /* (tweak): change text-normal to text-faint below to give unchecked checkboxes a lighter border */
+  border: 1px solid var(--text-normal);
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  transition: background-color 200ms ease-out 0s;
+  cursor: pointer;
+  filter: none;
+  border-radius: 4px;
+}
+.HyperMD-list-line input[type="checkbox"]:checked::before {
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  line-height: 15px;
+  width:12px;
+  left:2px;
+  right:2px;
+}
+.markdown-preview-view input[type="checkbox"]:checked {
+  border: none;
+  background-color: var(--interactive-accent);
+}
+.markdown-preview-view input[type="checkbox"]:hover {
+  background-color: var(--background-primary-alt);
+}
+.markdown-preview-view input[type="checkbox"]:checked::before {
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  line-height: 15px;
+  width:12px;
+  left:2px;
+  right:2px;
+}
+
+/* SVG check mark for done ('- [x]') */
+/* 'x' icon */
+.HyperMD-list-line input[data-task="x"]:checked::before,
+.markdown-preview-view li[data-task="x"]>input[type="checkbox"]:checked::before {
+  content: '';
+  top:2px;
+  bottom:2px;
+  background-color: white;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpolygon points='5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039'%3E%3C/polygon%3E%3C/svg%3E");
+}
+/* strikethrough for done tasks */
+.HyperMD-task-line[data-task="x"],
+.markdown-preview-view ul>li[data-task="x"] {
+  color: var(--checklist-done-color);
+  text-decoration: var(--checklist-done-decoration);
+}
+
+/* SVG chevron right for deferred/scheduled ('- [>]') */
+/* '-' icon */
+.HyperMD-list-line input[data-task=">"]:checked::before,
+.markdown-preview-view li[data-task=">"]>input[type="checkbox"]:checked::before {
+  content: '';
+  top:2px;
+  bottom:2px;
+  background-color: white;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.12 7L3.26667 11.76L4.57333 13.0667L10.7333 7L4.57333 0.933332L3.26667 2.24L8.12 7Z'/%3E%3C/svg%3E");
+}
+/* strikethrough for deferred/scheduled tasks */
+.HyperMD-task-line[data-task=">"],
+.markdown-preview-view ul>li[data-task=">"] {
+  color: var(--checklist-done-color);
+  text-decoration: var(--checklist-done-decoration);
+}
+
+/* SVG line for cancelled/non-task ('- [-]') */
+/* faint text-colored background */
+.HyperMD-list-line input[data-task="-"]:checked,
+.markdown-preview-view li[data-task="-"]>input[type="checkbox"]:checked {
+  background-color: var(--checklist-done-color);
+}
+/* '-' icon */
+.HyperMD-list-line input[data-task="-"]:checked::before,
+.markdown-preview-view li[data-task="-"]>input[type="checkbox"]:checked::before {
+  content: '';
+  top:2px;
+  bottom:2px;
+  background-color: white;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='6.5' width='13' height='1'/%3E%3C/svg%3E");
+}
+/* strikethrough for cancelled tasks */
+.HyperMD-task-line[data-task="-"],
+.markdown-preview-view ul>li[data-task="-"] {
+  color: var(--checklist-done-color);
+  text-decoration: var(--checklist-done-decoration);
+}
+
+/* question ('- [?]') */
+/* yellow background */
+.HyperMD-list-line input[data-task="?"]:checked,
+.markdown-preview-view li[data-task="?"]>input[type="checkbox"]:checked {
+  background-color: #A99400;
+}
+/* '?' icon */
+.HyperMD-list-line input[data-task="?"]:checked::before,
+.markdown-preview-view li[data-task="?"]>input[type="checkbox"]:checked::before {
+  content: '?';
+  -webkit-mask-image: none !important;
+  background-color: #A99400 !important;
+}
+/* normal text */
+.HyperMD-list-line[data-task="?"] span,
+.markdown-preview-view ul>li[data-task="?"] {
+  color: var(--text-normal);
+  text-decoration: none;
+}
+
+/* important task ('- [!]') */
+/* red background */
+.HyperMD-list-line input[data-task="!"]:checked,
+.markdown-preview-view li[data-task="!"]>input[type="checkbox"]:checked {
+  background-color: #e73c4c !important;
+}
+/* '!' icon */
+.HyperMD-list-line input[data-task="!"]:checked::before,
+.markdown-preview-view li[data-task="!"]>input[type="checkbox"]:checked::before {
+  content: '!';
+  -webkit-mask-image: none !important;
+  background-color: #e73c4c !important;
+}
+/* bold text */
+.HyperMD-list-line[data-task="!"] span,
+.markdown-preview-view ul>li[data-task="!"] {
+  color: var(--text-normal);
+  text-decoration: none;
+  font-weight: var(--bold-weight);
+  color: var(--bold-color);
+}
+
+.markdown-preview-view ul > li.task-list-item.is-checked {
+  text-decoration:none;
+  color:var(--text-normal);
+}
+
+.markdown-preview-view ol > li.task-list-item.is-checked {
+  text-decoration:none;
+  color:var(--text-normal);
+}
+
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:not([data-task=" "]) {
+    text-decoration:none;
+    color: var(--text-normal);
+}

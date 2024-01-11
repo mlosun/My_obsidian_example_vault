@@ -1,0 +1,45 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "6-模板",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": false,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "/",
+      "template": "6-模板/其他/模板_默认.md"
+    },
+    {
+      "folder": "0-周期笔记/2024/Daily",
+      "template": "6-模板/周期笔记/模板_Daily.md"
+    },
+    {
+      "folder": "0-周期笔记/2024/Weekly",
+      "template": "6-模板/周期笔记/模板_Weekly.md"
+    },
+    {
+      "folder": "1-项目",
+      "template": "6-模板/PARA/模板_项目.md"
+    },
+    {
+      "folder": "2-领域",
+      "template": "6-模板/PARA/模板_领域.md"
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [],
+  "startup_templates": [
+    ""
+  ],
+  "enable_ribbon_icon": true
+}
